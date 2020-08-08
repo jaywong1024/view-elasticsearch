@@ -16,6 +16,7 @@
                 <div class="price">{{ item.price }}</div>
                 <img :src="item.img" alt="">
                 <p v-html="item.title"></p>
+                <p v-html="item.shop"></p>
             </el-card>
         </el-row>
     </div>
@@ -34,7 +35,7 @@
         },
         methods: {
             search() {
-                axios.get("http://localhost:9090/jd/" + this.keyword + "/0/15").then(res => {
+                axios.get("http://localhost:9090/jd/" + this.keyword + "/0/100").then(res => {
                     this.list = res.data
                 })
             },
@@ -52,7 +53,7 @@
 <style scoped>
     .card-list {
         width: 200px;
-        height: 230px;
+        height: 270px;
         margin: 10px;
         display: inline-block;
         position: relative;
